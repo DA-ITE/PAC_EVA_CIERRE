@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cierre del curso | Evaluaciones Inteligentes, Auténticas y por Competencias</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --sise-red:#FF0E49;
+      --sise-red-dark:#D9003E;
+      --sise-dark:#241F21;
+      --sise-dark-soft:#30282B;
+      --sise-wine:#6E1735;
+      --sise-pink:#FFF0F5;
+      --sise-pink-border:#F8C6D7;
+      --sise-gray:#676063;
+      --sise-gray-light:#F4F2F3;
+      --sise-border:#E6E1E3;
+      --sise-white:#FFFFFF;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      background:#FFFFFF;
+      color:var(--sise-dark);
+      font-family:"Inter",Arial,sans-serif;
+    }
+
+    .course-close{
+      width:100%;
+      max-width:1120px;
+      margin:0 auto;
+      padding:0 0 34px;
+    }
+
+    /* HERO */
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding:42px;
+      border-radius:14px;
+      color:#FFFFFF;
+      background:
+        linear-gradient(
+          135deg,
+          var(--sise-dark) 0%,
+          var(--sise-dark-soft) 58%,
+          var(--sise-wine) 120%
+        );
+    }
+
+    .hero:before{
+      content:"";
+      position:absolute;
+      width:290px;
+      height:290px;
+      top:-130px;
+      right:-80px;
+      border:2px solid rgba(255,255,255,.12);
+      border-radius:50%;
+    }
+
+    .hero:after{
+      content:"";
+      position:absolute;
+      width:180px;
+      height:180px;
+      right:75px;
+      bottom:-120px;
+      border:28px solid rgba(255,14,73,.14);
+      border-radius:50%;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:900px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:16px;
+      padding:8px 12px;
+      border:1px solid rgba(255,255,255,.24);
+      border-radius:999px;
+      color:#FFD8E5;
+      background:rgba(255,255,255,.07);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:1.3px;
+      text-transform:uppercase;
+    }
+
+    .badge:before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--sise-red);
+    }
+
+    .hero h1{
+      margin:0;
+      max-width:900px;
+      font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+      font-size:clamp(42px,6vw,64px);
+      font-weight:900;
+      line-height:.98;
+      text-transform:uppercase;
+    }
+
+    .hero h1 span{
+      color:var(--sise-red);
+    }
+
+    .hero p{
+      max-width:850px;
+      margin:18px 0 0;
+      color:#F4ECEF;
+      font-size:16px;
+      line-height:1.75;
+    }
+
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:18px;
+    }
+
+    .meta span{
+      display:inline-block;
+      padding:7px 11px;
+      border:1px solid rgba(255,255,255,.20);
+      border-radius:999px;
+      background:rgba(255,255,255,.07);
+      color:#FFFFFF;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    /* IDEA CENTRAL */
+
+    .intro{
+      margin:22px 0 0;
+      padding:20px 22px;
+      border:1px solid var(--sise-pink-border);
+      border-left:6px solid var(--sise-red);
+      border-radius:10px;
+      background:var(--sise-pink);
+    }
+
+    .intro strong{
+      display:block;
+      margin-bottom:5px;
+      font-size:15px;
+    }
+
+    .intro p{
+      margin:0;
+      color:#514B4D;
+      font-size:14.5px;
+      line-height:1.65;
+    }
+
+    /* ENCABEZADOS */
+
+    .section-heading{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+      margin:32px 0 18px;
+    }
+
+    .section-label{
+      display:block;
+      margin-bottom:5px;
+      color:var(--sise-red);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:1.4px;
+      text-transform:uppercase;
+    }
+
+    .section-heading h2{
+      margin:0;
+      font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+      font-size:clamp(30px,4vw,42px);
+      font-weight:900;
+      line-height:1;
+      text-transform:uppercase;
+    }
+
+    /* TARJETAS */
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+    }
+
+    .card{
+      padding:20px;
+      border:1px solid var(--sise-border);
+      border-radius:12px;
+      background:#FFFFFF;
+    }
+
+    .card-top{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+
+    .num{
+      display:flex;
+      width:38px;
+      height:38px;
+      flex:0 0 38px;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      background:var(--sise-red);
+      color:#FFFFFF;
+      font-family:"Barlow Condensed","Arial Narrow",sans-serif;
+      font-size:17px;
+      font-weight:900;
+    }
+
+    .card h3{
+      margin:2px 0 8px;
+      font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+      font-size:24px;
+      font-weight:800;
+      line-height:1.05;
+      text-transform:uppercase;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--sise-gray);
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    /* RUTA */
+
+    .takeaway{
+      margin-top:18px;
+      padding:26px;
+      border-radius:14px;
+      background:
+        linear-gradient(
+          135deg,
+          var(--sise-dark) 0%,
+          #3A282E 72%,
+          var(--sise-wine) 140%
+        );
+      color:#FFFFFF;
+    }
+
+    .takeaway .section-label{
+      color:#FFD2DF;
+    }
+
+    .takeaway h2{
+      margin:0 0 18px;
+      font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+      font-size:36px;
+      font-weight:900;
+      line-height:1;
+      text-transform:uppercase;
+    }
+
+    .route{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:10px;
+    }
+
+    .route-item{
+      padding:14px;
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:10px;
+      background:rgba(255,255,255,.05);
+    }
+
+    .route-item span{
+      display:block;
+      margin-bottom:5px;
+      color:#FFB8CC;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+
+    .route-item strong{
+      display:block;
+      font-size:14px;
+      line-height:1.35;
+    }
+
+    /* APLICACIÓN */
+
+    .closing-note{
+      margin-top:22px;
+      padding:22px 24px;
+      border:1px solid var(--sise-pink-border);
+      border-left:6px solid var(--sise-red);
+      border-radius:12px;
+      background:var(--sise-pink);
+    }
+
+    .closing-note h3{
+      margin:0 0 8px;
+      color:var(--sise-red);
+      font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+      font-size:26px;
+      font-weight:900;
+      text-transform:uppercase;
+    }
+
+    .closing-note p{
+      margin:0;
+      color:#4D4648;
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    /* REFLEXIÓN FINAL */
+
+    .reflection{
+      margin-top:18px;
+      padding:22px 24px;
+      border:1px solid var(--sise-border);
+      border-radius:12px;
+      background:#FFFFFF;
+    }
+
+    .reflection h3{
+      margin:0 0 10px;
+      color:var(--sise-red);
+      font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+      font-size:26px;
+      font-weight:900;
+      text-transform:uppercase;
+    }
+
+    .reflection p{
+      margin:0 0 12px;
+      color:#4D4648;
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    .reflection-box{
+      padding:15px 17px;
+      border-radius:9px;
+      background:var(--sise-gray-light);
+      color:var(--sise-dark);
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    /* FRASE FINAL */
+
+    .quote{
+      margin-top:18px;
+      padding:22px 24px;
+      border-radius:12px;
+      background:var(--sise-red);
+      color:#FFFFFF;
+      font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+      font-size:28px;
+      font-weight:800;
+      line-height:1.2;
+    }
+
+    /* BIBLIOGRAFÍA */
+
+    .bibliography{
+      margin-top:18px;
+      border:1px solid var(--sise-border);
+      border-radius:12px;
+      overflow:hidden;
+      background:#FFFFFF;
+    }
+
+    .bibliography summary{
+      cursor:pointer;
+      list-style:none;
+      padding:18px 20px;
+      background:var(--sise-gray-light);
+      font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+      font-size:24px;
+      font-weight:900;
+      text-transform:uppercase;
+    }
+
+    .bibliography summary::-webkit-details-marker{
+      display:none;
+    }
+
+    .bibliography summary:after{
+      content:"+";
+      float:right;
+      color:var(--sise-red);
+      font-size:28px;
+      line-height:1;
+    }
+
+    .bibliography[open] summary:after{
+      content:"–";
+    }
+
+    .bib-body{
+      padding:18px 22px 20px;
+    }
+
+    .bib-body p{
+      margin:0 0 12px;
+      color:#5E5759;
+      font-size:13.5px;
+      line-height:1.6;
+    }
+
+    .bib-body p:last-child{
+      margin-bottom:0;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      .cards{
+        grid-template-columns:1fr;
+      }
+
+      .route{
+        grid-template-columns:1fr 1fr;
+      }
+
+    }
+
+    @media(max-width:620px){
+
+      .hero{
+        padding:30px 24px;
+      }
+
+      .section-heading{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .route{
+        grid-template-columns:1fr;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+<main class="course-close">
+
+  <!-- =====================================================
+       PORTADA
+  ====================================================== -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="badge">
+        Cierre del curso
+      </div>
+
+      <h1>
+        Evaluaciones Inteligentes,
+        <span>Auténticas y por Competencias</span>
+      </h1>
+
+      <p>
+        A lo largo del curso hemos recorrido un proceso completo de mejora
+        de la evaluación: partimos del diagnóstico de una evidencia real,
+        la transformamos en una evidencia auténtica, construimos un
+        instrumento con criterios observables y uso responsable de IA,
+        y finalmente integramos todo en una estrategia evaluativa viable
+        para llevar al aula.
+      </p>
+
+      <div class="meta">
+        <span>8 horas</span>
+        <span>4 módulos</span>
+        <span>Online asíncrono</span>
+        <span>Docentes SISE</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       IDEA CENTRAL
+  ====================================================== -->
+
+  <section class="intro">
+
+    <strong>
+      Una idea central para cerrar
+    </strong>
+
+    <p>
+      La evaluación auténtica no es solamente una actividad “más real”.
+      Es un sistema de decisiones alineadas que permite observar el
+      desempeño del estudiante, hacer explícitos los criterios,
+      retroalimentar la mejora y tomar mejores decisiones sobre la
+      enseñanza y el aprendizaje.
+    </p>
+
+  </section>
+
+
+  <!-- =====================================================
+       CONCLUSIONES
+  ====================================================== -->
+
+  <section class="section-heading">
+
+    <div>
+
+      <span class="section-label">
+        Cinco ideas para cerrar
+      </span>
+
+      <h2>
+        Lo esencial que nos llevamos
+      </h2>
+
+    </div>
+
+  </section>
+
+
+  <section class="cards">
+
+
+    <!-- 01 -->
+
+    <article class="card">
+
+      <div class="card-top">
+
+        <div class="num">
+          01
+        </div>
+
+        <div>
+
+          <h3>
+            Evaluar competencias es observar desempeños
+          </h3>
+
+          <p>
+            Evaluar por competencias implica mirar más allá de lo que
+            el estudiante recuerda. Necesitamos observar qué puede hacer
+            con aquello que sabe frente a una situación, problema,
+            producto o reto significativo.
+          </p>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- 02 -->
+
+    <article class="card">
+
+      <div class="card-top">
+
+        <div class="num">
+          02
+        </div>
+
+        <div>
+
+          <h3>
+            La evidencia debe hacer visible el aprendizaje
+          </h3>
+
+          <p>
+            Una evidencia auténtica permite observar un desempeño en un
+            contexto significativo. No basta con que la actividad sea
+            atractiva: debe existir coherencia entre el resultado de
+            aprendizaje, la situación propuesta y aquello que el
+            estudiante debe demostrar.
+          </p>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- 03 -->
+
+    <article class="card">
+
+      <div class="card-top">
+
+        <div class="num">
+          03
+        </div>
+
+        <div>
+
+          <h3>
+            Criterios e instrumentos hacen visible la calidad
+          </h3>
+
+          <p>
+            Los criterios deben describir desempeños observables y el
+            instrumento debe permitir valorar exactamente la evidencia
+            solicitada. Un buen instrumento ayuda tanto al docente como
+            al estudiante a comprender qué se espera y cómo se reconocerá
+            la calidad del desempeño.
+          </p>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- 04 -->
+
+    <article class="card">
+
+      <div class="card-top">
+
+        <div class="num">
+          04
+        </div>
+
+        <div>
+
+          <h3>
+            Retroalimentar significa orientar la mejora
+          </h3>
+
+          <p>
+            La retroalimentación no debe limitarse a justificar una nota.
+            Su valor está en ayudar al estudiante a reconocer qué logró,
+            qué necesita fortalecer y qué acción concreta puede realizar
+            para mejorar su desempeño.
+          </p>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- 05 -->
+
+    <article class="card">
+
+      <div class="card-top">
+
+        <div class="num">
+          05
+        </div>
+
+        <div>
+
+          <h3>
+            La IA apoya, pero el juicio sigue siendo humano
+          </h3>
+
+          <p>
+            La inteligencia artificial puede apoyar la construcción,
+            revisión y mejora de evidencias, criterios e instrumentos.
+            Sin embargo, la interpretación del desempeño, la decisión
+            evaluativa y la responsabilidad pedagógica permanecen en
+            el docente.
+          </p>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- 06 -->
+
+    <article class="card">
+
+      <div class="card-top">
+
+        <div class="num">
+          06
+        </div>
+
+        <div>
+
+          <h3>
+            La evaluación cobra sentido cuando llega al aula
+          </h3>
+
+          <p>
+            Una estrategia evaluativa debe ser coherente, pero también
+            viable. Su valor se confirma cuando puede implementarse en
+            un contexto real, recoger evidencias pertinentes y generar
+            información que permita revisar y mejorar la práctica.
+          </p>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+  </section>
+
+
+  <!-- =====================================================
+       RUTA DEL CURSO
+  ====================================================== -->
+
+  <section class="takeaway">
+
+    <span class="section-label">
+      Ruta final del curso
+    </span>
+
+    <h2>
+      De diagnóstico a transformación
+    </h2>
+
+    <div class="route">
+
+      <div class="route-item">
+
+        <span>
+          AA1
+        </span>
+
+        <strong>
+          Diagnostica una evidencia real e identifica brechas.
+        </strong>
+
+      </div>
+
+
+      <div class="route-item">
+
+        <span>
+          AA2
+        </span>
+
+        <strong>
+          Rediseña la evidencia para hacer visible un desempeño auténtico.
+        </strong>
+
+      </div>
+
+
+      <div class="route-item">
+
+        <span>
+          AA3
+        </span>
+
+        <strong>
+          Construye el instrumento con criterios, niveles y uso responsable de IA.
+        </strong>
+
+      </div>
+
+
+      <div class="route-item">
+
+        <span>
+          AA4
+        </span>
+
+        <strong>
+          Integra la estrategia y planifica su implementación.
+        </strong>
+
+      </div>
+
+
+      <div class="route-item">
+
+        <span>
+          Caso Integrador
+        </span>
+
+        <strong>
+          Aplica, evidencia, reflexiona y coevalúa la experiencia.
+        </strong>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       PARA SEGUIR APLICANDO
+  ====================================================== -->
+
+  <section class="closing-note">
+
+    <h3>
+      Para seguir aplicando
+    </h3>
+
+    <p>
+      Lleva lo construido durante el curso a una situación real de tu
+      práctica docente. Revisa periódicamente la relación entre resultado
+      de aprendizaje, evidencia, criterios, instrumento y retroalimentación.
+      Observa qué ocurre cuando la estrategia se implementa, recoge
+      evidencias suficientes y utiliza esa información para ajustar la
+      siguiente aplicación. La mejora de la evaluación también es un
+      proceso continuo de aprendizaje docente.
+    </p>
+
+  </section>
+
+
+  <!-- =====================================================
+       CIERRE METACOGNITIVO
+  ====================================================== -->
+
+  <section class="reflection">
+
+    <h3>
+      Antes pensaba / Ahora decido
+    </h3>
+
+    <p>
+      Para cerrar el recorrido, piensa brevemente en cómo ha cambiado tu
+      manera de comprender la evaluación.
+    </p>
+
+    <div class="reflection-box">
+      <strong>Antes pensaba que evaluar era...</strong>
+      <br><br>
+      _________________________________________________
+      <br><br>
+      <strong>Ahora, cuando diseñe una evaluación, voy a...</strong>
+      <br><br>
+      _________________________________________________
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       FRASE FINAL
+  ====================================================== -->
+
+  <section class="quote">
+    “Evaluar auténticamente no significa solo medir lo que el estudiante
+    sabe, sino diseñar oportunidades para observar lo que puede hacer,
+    orientar su mejora y tomar mejores decisiones sobre el aprendizaje.”
+  </section>
+
+
+  <!-- =====================================================
+       BIBLIOGRAFÍA
+  ====================================================== -->
+
+  <details class="bibliography">
+
+    <summary>
+      Bibliografía
+    </summary>
+
+    <div class="bib-body">
+
+      <p>
+        SISE. (2025).
+        <em>Lineamientos para la Evaluación de los Aprendizajes
+        (DAG-GC-LEA-05, versión 01).</em>
+        Dirección Académica General - Gestión Curricular.
+      </p>
+
+      <p>
+        SISE.
+        <em>Ficha Maestra de Diseño Instruccional:
+        Evaluaciones Inteligentes, Auténticas y por Competencias.</em>
+      </p>
+
+      <p>
+        SISE.
+        <em>Lineamiento de Uso de Inteligencia Artificial para Estudiantes.</em>
+      </p>
+
+      <p>
+        SISE.
+        <em>Lineamiento de Uso de Inteligencia Artificial para Docentes.</em>
+      </p>
+
+      <p>
+        SISE.
+        <em>Declaración Jurada sobre el Uso Ético de Inteligencia Artificial.</em>
+      </p>
+
+      <p>
+        Black, P., &amp; Wiliam, D. (1998).
+        <em>Assessment and classroom learning.</em>
+        Assessment in Education, 5(1), 7-74.
+      </p>
+
+      <p>
+        Brookhart, S. M. (2013).
+        <em>How to Create and Use Rubrics for Formative Assessment and Grading.</em>
+        ASCD.
+      </p>
+
+      <p>
+        Hattie, J., &amp; Timperley, H. (2007).
+        <em>The power of feedback.</em>
+        Review of Educational Research, 77(1), 81-112.
+      </p>
+
+      <p>
+        Nicol, D. J., &amp; Macfarlane-Dick, D. (2006).
+        <em>Formative assessment and self-regulated learning.</em>
+        Studies in Higher Education, 31(2), 199-218.
+      </p>
+
+      <p>
+        Wiggins, G. (1998).
+        <em>Educative Assessment.</em>
+        Jossey-Bass.
+      </p>
+
+      <p>
+        Wiggins, G., &amp; McTighe, J. (2005).
+        <em>Understanding by Design.</em>
+        ASCD.
+      </p>
+
+      <p>
+        UNESCO. (2023).
+        <em>Guidance for generative AI in education and research.</em>
+        UNESCO.
+      </p>
+
+    </div>
+
+  </details>
+
+</main>
+
+</body>
+</html>
